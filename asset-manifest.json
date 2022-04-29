@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Expert-Admin-FrontEnd/static/css/main.073c9b0a.css",
+    "main.js": "/Expert-Admin-FrontEnd/static/js/main.5e36e06b.js",
+    "static/js/787.f82bba9d.chunk.js": "/Expert-Admin-FrontEnd/static/js/787.f82bba9d.chunk.js",
+    "static/media/logo.svg": "/Expert-Admin-FrontEnd/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Expert-Admin-FrontEnd/index.html",
+    "main.073c9b0a.css.map": "/Expert-Admin-FrontEnd/static/css/main.073c9b0a.css.map",
+    "main.5e36e06b.js.map": "/Expert-Admin-FrontEnd/static/js/main.5e36e06b.js.map",
+    "787.f82bba9d.chunk.js.map": "/Expert-Admin-FrontEnd/static/js/787.f82bba9d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.5e36e06b.js"
+  ]
+}
