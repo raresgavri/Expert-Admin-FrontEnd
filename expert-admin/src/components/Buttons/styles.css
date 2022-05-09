@@ -1,0 +1,51 @@
+.Button {
+    background-color: white;
+    height: 25px;
+    width: 25px;
+    background-size: 100%;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.addButton {
+    width: 80px;
+    align-items: center;
+    appearance: none;
+    background-color: #0257a0;
+    background-size: calc(100% + 20px) calc(100% + 20px);
+    border-radius: 100px;
+    border-width: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: CircularStd, sans-serif;
+    font-size: 1rem;
+    height: auto;
+    justify-content: center;
+    line-height: 1.5;
+    padding: 6px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .2s, background-position .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    white-space: nowrap;
+    margin-bottom:10px;
+}
+
+.addButton:active,
+.addButton:focus {
+    outline: none;
+}
+
+.addButton:hover {
+    background-position: -20px -20px;
+    background-color: #3384d0;
+}
