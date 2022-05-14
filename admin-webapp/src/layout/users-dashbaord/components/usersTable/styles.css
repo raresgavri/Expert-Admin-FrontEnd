@@ -1,0 +1,11 @@
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.table-permission {
+    width: 80px;
+}
+
+.table-component {
+    border-radius: 10px;
+}
