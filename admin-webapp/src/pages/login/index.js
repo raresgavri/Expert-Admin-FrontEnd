@@ -1,18 +1,38 @@
 import {Input} from "../../layout/login/components/input";
 import {Button} from "../../layout/login/components/button";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import './styles.css';
+import {loginUser} from "../../webapi/auth";
+import {useCookies} from "react-cookie";
 
 export const LoginPage = () => {
     const navigate = useNavigate();
     const [submitData, setSubmitData] = useState({});
+    const [response, setResponse] = useState(null);
+    const [error, setError] = useState(null);
+    const [_, setCookie] = useCookies();
 
     const onSubmit = () => {
         if(submitData.username && submitData.password){
-            navigate('/recordings-dashboard');
+            setError(null);
+            setResponse(null)
+            loginUser({email: submitData.username, password: submitData.password}).then((res) => {
+                setError(null)
+                setResponse(res)
+            }).catch((e) => {
+                setError(e.response.data);
+                setResponse(null);
+            })
         }
     }
+
+    useEffect(() => {
+        if(response){
+            setCookie('fiiHealthyToken', response.token)
+            navigate('/users-dashboard')
+        }
+    }, [response])
 
     return (
         <div className="app-container">
@@ -29,9 +49,21 @@ export const LoginPage = () => {
                         <div className="header-subtitle">Sign in to access your Account</div>
                     </div>
                     <Input placeholder={'Username'} type={"text"}
-                           onChange={(event) => setSubmitData({...submitData, username: event.target.value})}/>
+                           onChange={(event) => setSubmitData({...submitData, username: event.target.value})}
+                    />
+                    {error?.errors?.email &&
+                        <div className="error-message">{error.errors.email[0]}</div>
+                    }
                     <Input placeholder={'Password'} type={"password"}
-                           onChange={(event) => setSubmitData({...submitData, password: event.target.value})}/>
+                           onChange={(event) => setSubmitData({...submitData, password: event.target.value})}
+                    />
+                    {error?.errors?.password &&
+                        <div className="error-message">{error.errors.password[0]}</div>
+                    }
+                    {error && !error.errors &&
+                        <div className="error-message">{error}</div>
+                    }
+
                     <Button label={'Sign in'} onClick={onSubmit}/>
                 </div>
                 <div className="login-form-footer">

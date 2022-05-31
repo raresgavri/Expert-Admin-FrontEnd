@@ -1,5 +1,23 @@
 p{
-    font-size:xx-large;
+    font-size:32px;
+    font-weight: bold;
+}
+
+.table-title-container {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.table-link {
+    margin-left: 15px;
+    padding-top: 21px;
+}
+
+.table-link > a {
+    color: #0257a0;
+    font-size: 14px;
     font-weight: bold;
 }
 
